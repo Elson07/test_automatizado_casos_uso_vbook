@@ -22,16 +22,21 @@ class Xpath():
         'LIXEIRA' : '/html/body/div[7]/div[3]/div/div[2]/div[2]/div/div/div/div[1]/div[2]/div[1]/div/div[2]/div[3]/div'
     }
 
+    ############################################################ COMCLUIDO ############################################################
+    CADASTRO_USUARIO = {
+        'APELIDO' : ['//*[@id="nome"]', 'APELIDO'],
+        'NOME_COMPLETO' : ['//*[@id="nomeSobrenome"]', 'NOME_COMPLETO'],
+        'EMAIL' : ['//*[@id="email"]', 'EMAIL'],
+        'CELULAR' : ['//*[@id="telefone"]', 'CELULAR'],
+        'SENHA' : ['//*[@id="senha"]', 'SENHA'],
+        'CONFIRMAR_SENHA' : ['//*[@id="confSenha"]', 'SENHA']
+    }
+
+
     INPUT = {
         'ENTRAR_USUARIO' : '//*[@id="exampleInputEmail1"]',
         'ENTRAR_SENHA' : '//*[@id="exampleInputPassword1"]',
         'CRIAR_TITULO' : '//*[@id="titulo"]',
-        'CADASTRO_APELIDO' : '//*[@id="nome"]',
-        'CADASTRO_NOME_COMPLETO' : '//*[@id="nomeSobrenome"]',
-        'CADASTRO_EMAIL' : '//*[@id="email"]',
-        'CADASTRO_CELULAR' : '//*[@id="telefone"]',
-        'CADASTRO_SENHA' : '//*[@id="senha"]',
-        'CADASTRO_CONFIRMAR_SENHA' : '//*[@id="confSenha"]',
         'CADASTRO_CODIGO' : ['//*[@id="c1"]', '//*[@id="c2"]', '//*[@id="c3"]', '//*[@id="c4"]', '//*[@id="c5"]', '//*[@id="c6"]'],
         'CANCELAR_CONTA' : '/html/body/div/div[1]/form/input'
     }

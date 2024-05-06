@@ -75,22 +75,35 @@ class TesteAutomatizado():
 
 
     def cadastroUsuario(self, USER):
+        
+        Xpath.CADASTRO_USUARIO
+
         self.waitClick(Xpath.BTN['USUARIO'])
         self.waitClick(Xpath.BTN['CADASTRAR_SE'])
-        self.waitInput(Xpath.INPUT['CADASTRO_APELIDO'], USER['APELIDO'])
-        self.waitInput(Xpath.INPUT['CADASTRO_NOME_COMPLETO'], USER['NOME_COMPLETO'])
-        self.waitInput(Xpath.INPUT['CADASTRO_EMAIL'], USER['EMAIL'])
-        self.waitInput(Xpath.INPUT['CADASTRO_CELULAR'], USER['CELULAR'])
-        self.waitInput(Xpath.INPUT['CADASTRO_SENHA'], USER['SENHA'])
-        self.waitInput(Xpath.INPUT['CADASTRO_CONFIRMAR_SENHA'], USER['SENHA'])
-        self.waitClick(Xpath.BTN['ENVIAR_CADASTRO_USUARIO'])
+
+        #Trabalhado 
+        for chave ,valor in Xpath.CADASTRO_USUARIO.items():
+            XPATH = valor[0]
+            CAMPO = valor[1] 
+            
+            self.waitInput(XPATH, USER[CAMPO])
+
+            
+
+        #self.waitInput(Xpath.INPUT['CADASTRO_APELIDO'], USER['APELIDO'])
+        #self.waitInput(Xpath.INPUT['CADASTRO_NOME_COMPLETO'], USER['NOME_COMPLETO'])
+        #self.waitInput(Xpath.INPUT['CADASTRO_EMAIL'], USER['EMAIL'])
+        #self.waitInput(Xpath.INPUT['CADASTRO_CELULAR'], USER['CELULAR'])
+        #self.waitInput(Xpath.INPUT['CADASTRO_SENHA'], USER['SENHA'])
+        #self.waitInput(Xpath.INPUT['CADASTRO_CONFIRMAR_SENHA'], USER['SENHA'])
+        #self.waitClick(Xpath.BTN['ENVIAR_CADASTRO_USUARIO'])
         
-        codigoEmail = self.getCodeByEmail(USER)
+        #codigoEmail = self.getCodeByEmail(USER)
 
-        for i in range(len(codigoEmail)):
-            self.waitInput(Xpath.INPUT['CADASTRO_CODIGO'][i] , codigoEmail[i])
+        #for i in range(len(codigoEmail)):
+            #self.waitInput(Xpath.INPUT['CADASTRO_CODIGO'][i] , codigoEmail[i])
 
-        self.waitClick(Xpath.BTN['CONFIRMAR_CODIGO'])
+        #self.waitClick(Xpath.BTN['CONFIRMAR_CODIGO'])
 
 
     def deletarUsuario(self, USER):
